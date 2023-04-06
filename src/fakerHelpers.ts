@@ -1,4 +1,4 @@
-import faker from 'faker'
+import {faker} from '@faker-js/faker'
 import {
   FAKER_SYNTAX_MATCHER,
   FAKER_SYNTAX_PREFIX,

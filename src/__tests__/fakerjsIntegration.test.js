@@ -1,5 +1,5 @@
 import * as path from 'path'
-import * as faker from 'faker';
+import * as faker from '@faker-js/faker';
 
 import { getRoute } from '../../src/getRoute'
 import { getFakerVarsInContent, getContentWithReplacedFakerVars, areFakerVarsSyntaxValidInContent } from '../../src/fakerHelpers'
