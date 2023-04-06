@@ -54,9 +54,10 @@ export const getContentWithReplacedFakerVars = (content: string): string => {
 
   fakerVars.forEach((fakerVar) => {
     const fakerVarSyntax = `${FAKER_SYNTAX_PREFIX}${fakerVar}${FAKER_SYNTAX_SUFIX}`
-    const [namespace, method] = fakerVar.split(':')
+    const [namespace, methodString] = fakerVar.split(':')
+    const [method, methodParams] = methodString.split('=>')
     // @ts-ignore
-    const fakedData = faker[namespace][method]()
+    const fakedData = faker[namespace][method](methodParams)
     let sanitizedFakedData = JSON.stringify(fakedData)
 
     const isFakedDataString = sanitizedFakedData.startsWith('"') && sanitizedFakedData.endsWith('"')
